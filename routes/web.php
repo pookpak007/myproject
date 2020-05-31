@@ -103,22 +103,6 @@ Route::delete('/covid19/{id}', 'Covid19Controller@destroy');
 */
 Route::resource('/staff','StaffController');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -129,5 +113,13 @@ Route::resource('profile', 'ProfileController');
 Route::resource('vehicles', 'VehiclesController');
 Route::resource('users', 'UsersController');
 
-
 Route::resource('book', 'BookController');
+
+Route::resource('product', 'ProductController');
+Route::middleware(['auth'])->group(function () 
+{
+    Route::resource('order', 'OrderController');
+    Route::resource('payment', 'PaymentController');
+    Route::resource('order-product', 'OrderProductController');
+});
+

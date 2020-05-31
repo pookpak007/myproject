@@ -18,8 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -29,17 +32,71 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!--navbar หน้า home-->
+                <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            gallery
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="http://localhost/myproject/public/newgallery">newgallery</a>
+                                <a class="dropdown-item" href="http://localhost/myproject/public/newgallery/ant">ant</a>
+                                <a class="dropdown-item" href="http://localhost/myproject/public/newgallery/bird">bird</a>
+                                <a class="dropdown-item" href="http://localhost/myproject/public/newgallery/cat">cat</a>
+                                <a class="dropdown-item" href="http://localhost/myproject/public/newgallery/god">god</a>
+                                <a class="dropdown-item" href="http://localhost/myproject/public/newgallery/spider">spier</a>
+                                                       
+                        </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            table
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="nav-link" href="http://localhost/myproject/public/teacher">teacher<span class="sr-only">(current)</span></a>                
+                            <a class="nav-link" href="http://localhost/myproject/public/student">student<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="http://localhost/myproject/public/table">table<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="http://localhost/myproject/public/covid19">covid19<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="http://localhost/myproject/public/staff">staff<span class="sr-only">(current)</span></a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        CRUD Generator
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="nav-link" href="http://localhost/myproject/public/post">post<span class="sr-only">(current)</span></a>                
+                            <a class="nav-link" href="http://localhost/myproject/public/profile">profile<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="http://localhost/myproject/public/vehicles">vehicles<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="http://localhost/myproject/public/book">book<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="http://localhost/myproject/public/product">product<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="http://localhost/myproject/public/order">order<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="http://localhost/myproject/public/payment">payment<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="http://localhost/myproject/public/order-product">order-product<span class="sr-only">(current)</span></a>
+
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="http://localhost/myproject/public/vehicles/pdf">vehicles PDF<span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+                
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
+                            
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -70,7 +127,9 @@
                     </ul>
                 </div>
             </div>
+        
         </nav>
+        
 
         <main class="py-4">
             @yield('content')
